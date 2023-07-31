@@ -141,7 +141,7 @@ export const Bot = (props: BotProps & { class?: string }) => {
         }, 50)
     }
 
-    const updateLastMessage = (text: string) => {      
+    const updateLastMessage = (text: string) => {
         setMessages(data => {
             const updated = data.map((item, i) => {
               if (i === data.length - 1) {
@@ -309,7 +309,7 @@ export const Bot = (props: BotProps & { class?: string }) => {
                                     {message.type === 'userMessage' && loading() && index() === messages().length - 1 && (
                                         <LoadingBubble />
                                     )}
-                                    {message.sourceDocuments && message.sourceDocuments.length && 
+                                    {message.sourceDocuments && message.sourceDocuments.length &&
                                     <div style={{ display: 'flex', "flex-direction": 'row', width: '100%' }}>
                                         <For each={[...message.sourceDocuments]}>
                                             {(src) => (
@@ -319,7 +319,7 @@ export const Bot = (props: BotProps & { class?: string }) => {
                                                     onSourceClick={() => {
                                                         setSourcePopupSrc(src);
                                                         setSourcePopupOpen(true);
-                                                    }}                                        
+                                                    }}
                                                 />
                                             )}
                                         </For>
@@ -352,4 +352,3 @@ type BottomSpacerProps = {
 const BottomSpacer = (props: BottomSpacerProps) => {
     return <div ref={props.ref} class="w-full h-32" />
 }
-  
